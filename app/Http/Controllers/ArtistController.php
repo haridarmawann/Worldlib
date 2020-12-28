@@ -79,6 +79,12 @@ class ArtistController extends Controller
      */
     public function update(Request $request, Artist $artist)
     {    
+        $request->validate([
+            'name' => 'required|max:50',
+            'description' => 'required',
+            'birth_time'=>'required'  
+            ]);
+
         $data=$request->all();
         Artist::where('id',$request->id)
                 ->update($data);

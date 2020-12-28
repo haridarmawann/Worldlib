@@ -23,6 +23,15 @@ Route::get('/','PageController@index')
 
 Route::resource('country', 'CountryController');
 Route::resource('artist', 'ArtistController');
+Route::resource('museum', 'MuseumController');
+// Route::resource('type', 'TypeController');
+
+Route::get('/type','TypeController@index')->name('type.index');
+Route::get('/type/create','TypeController@create')->name('type.create');
+Route::post('/type', 'TypeController@store')->name('type.store');
+route::get('/type/{type}/edit','TypeController@edit')->name('type.edit'); 
+route::patch('/type/{type}','TypeController@update')->name('type.update');
+route::delete('/type/{type}','TypeController@destroy')->name('type.destroy'); 
 
 
 

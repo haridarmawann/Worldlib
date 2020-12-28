@@ -50,8 +50,7 @@ class CountryController extends Controller
 
             $data = $request->all();
             $data['country_image'] = $request->file('country_image')->store(
-                'assets/gallery', 'public'
-        );
+                'assets/gallery', 'public');
 
         Country::create($data);
         //query

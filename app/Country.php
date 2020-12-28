@@ -14,4 +14,8 @@ class Country extends Model
     protected $guarded = [];
 
     protected $table = 'countries';
+
+    public function museum(){
+        return $this->hasMany(Museum::class,'country_id','id');
+    }
 }

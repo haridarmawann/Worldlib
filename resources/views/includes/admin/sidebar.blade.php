@@ -22,7 +22,7 @@
     </li>
     
     <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('museum.index')}}">
         <i class="fas fa-fw fa-building"></i>
         <span>Museum</span></a>
     </li>
@@ -40,7 +40,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('type.index')}}">
           <i class="fas fa-fw fa-dice-d6"></i>
           <span>Jenis</span></a>
       </li>

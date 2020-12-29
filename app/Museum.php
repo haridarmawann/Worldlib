@@ -18,4 +18,13 @@ class Museum extends Model
     public function country(){
         return $this->belongsTo(Country::class, 'country_id','id');
     }
+
+    public function item()
+    {
+        return $this->hasMany(Item::class, 'museum_id','id');
+    }
+
+    public function article(){
+        return $this->hasMany(Article::class, 'museum_id','id');
+    }
 }

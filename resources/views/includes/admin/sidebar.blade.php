@@ -28,7 +28,7 @@
     </li>
     
     <li class="nav-item">
-      <a class="nav-link" href="">
+      <a class="nav-link" href="{{ route('item.index')}}">
         <i class="fas fa-fw fa-dice-d6"></i>
         <span>Item</span></a>
     </li>
@@ -46,7 +46,7 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="">
+        <a class="nav-link" href="{{ route('article.index')}}">
           <i class="fas fa-fw fa-dice-d6"></i>
           <span>Article</span></a>
       </li>

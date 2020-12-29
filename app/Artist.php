@@ -10,4 +10,8 @@ class Artist extends Model
         'name','description','birth_time','dead_time'
     ];
     protected $guarded = [];
+
+    public function item(){
+        return $this->hasMany(Item::class, 'artist_id','id');
+    }
 }

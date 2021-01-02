@@ -1,0 +1,297 @@
+body {
+  background-color: #0F0E20;
+  font-family: 'DM Sans', sans-serif;
+  color: #ffffff;
+}
+
+.navbar-light .navbar-brand img {
+  max-height: 25px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #06122D;
+  font-size: larger;
+  font-weight: 700;
+}
+
+.navbar-light .btn-nabvar-right {
+  height: 40px;
+}
+
+header {
+  background: #0F0E20;
+  min-height: 450px;
+  padding-top: 60px;
+}
+
+header h1 {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+}
+
+header h2 {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+header h3 {
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+header p {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.section-content {
+  min-height: 834px;
+  background-color: #ffffff;
+  margin-bottom: 64px;
+}
+
+.section-content .section-article {
+  margin-bottom: 64px;
+}
+
+.section-content p {
+  margin: auto;
+  color: #0F0E20;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.section-content h3 {
+  color: #0F0E20;
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 136px;
+}
+
+.section-content .card-country {
+  min-height: 407.88px;
+  padding: 15px;
+  background-size: cover;
+  margin-bottom: 100px;
+  border-radius: 15px;
+  margin-top: -80px;
+  margin-right: -10px;
+}
+
+.section-content .card-country1 {
+  min-height: 439px;
+  padding: 15px;
+  background-size: cover;
+  margin-bottom: 60px;
+  border-radius: 15px;
+  margin-top: -200px;
+}
+
+.section-content .card-country2 {
+  min-height: 258px;
+  padding: 15px;
+  background-size: cover;
+  border-radius: 15px;
+  margin-top: 30px;
+  margin-right: -15px;
+}
+
+.section-content .card-country3 {
+  min-height: 439px;
+  padding: 15px;
+  background-size: cover;
+  margin-bottom: 60px;
+  border-radius: 15px;
+}
+
+.section-content .card-artikel {
+  min-height: 112px;
+  padding: 15px;
+  background-size: cover;
+  border-radius: 15px;
+  margin-right: -15px;
+  background-color: #0F0E20;
+  margin-bottom: 10px;
+}
+
+.section-content .country {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  margin-top: auto;
+}
+
+.section-content .artikel {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.section-content .item {
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+}
+
+.section-content .btn-view-details {
+  background: #FD6647;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 700;
+}
+
+.section-item {
+  min-height: 406px;
+  background-color: #ffffff;
+  margin-bottom: -210px;
+}
+
+.section-item .section-item-header {
+  margin-top: 140px;
+}
+
+.section-item .section-item-header h2 {
+  color: #353A69;
+  font-family: 'Crete Round', serif;
+  font-weight: 400;
+  font-size: large;
+  font-size: 55px;
+}
+
+.section-item .section-item-header p {
+  color: #040F2A;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.section-detail-item {
+  margin-top: -400px;
+  min-height: 90vh;
+}
+
+.section-detail-item h2 {
+  margin-top: 20px;
+  color: #353A69;
+  font-family: 'Crete Round', serif;
+  font-weight: 400;
+  font-size: large;
+  font-size: 30px;
+}
+
+.section-detail-item .features {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.section-detail-item .features .description {
+  float: right;
+}
+
+.section-detail-item .features .description h3 {
+  color: #0F0E20;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.section-detail-item .features .description h2 {
+  color: #0F0E20;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.section-detail-item .features .description h4 {
+  color: #0F0E20;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.section-detail-item .features .description p {
+  color: #0F0E20;
+  margin-top: 50px;
+}
+
+.section-detail-item .features .features-image {
+  min-width: 339.05px;
+  height: 512.88px;
+  float: left;
+  border-radius: 30px;
+}
+
+.section-detail-item .card-detail-item {
+  min-height: 112px;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+.section-detail-item .card-detail-item .new1 {
+  color: #353A69;
+  font-family: 'Crete Round', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.section-detail-item .card-detail-item .new2 {
+  color: #989898;
+  font-family: 'Crete Round', serif;
+  font-weight: lighter;
+  font-size: 15px;
+}
+
+.section-detail-item .gallery .xzoom-container {
+  display: block;
+}
+
+.section-detail-item .gallery .xzoom-container .xzoom {
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-bottom: 10px;
+}
+
+.section-detail-item hr {
+  margin-top: 50px;
+  color: #989898;
+}
+
+footer {
+  background: #0F0E20;
+  min-height: 300px;
+  padding-top: 60px;
+}
+
+footer h3 {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+footer p {
+  color: #949494;
+}
+
+footer .btn-view-details {
+  background: #FFD2DD;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+footer .border-top {
+  color: #949494;
+}
+
+footer .footer-copyright {
+  font-weight: 400;
+  color: #949494;
+}
+/*# sourceMappingURL=main.css.map */

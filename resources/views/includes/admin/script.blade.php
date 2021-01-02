@@ -14,3 +14,14 @@
 <!-- Page level custom scripts -->
 <script src="{{ url('backend/js/demo/chart-area-demo.js') }}"></script>
 <script src="{{ url('backend/js/demo/chart-pie-demo.js') }}"></script>
+
+{{-- <script>
+function ConfirmDelete()
+{
+  var x = confirm("Are you sure you want to delete?");
+  if (x)
+      return true;
+  else
+    return false;
+}
+</script> --}}

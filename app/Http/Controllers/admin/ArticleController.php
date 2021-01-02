@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
+
+use App\Http\Controllers\Controller;
 
 use App\Article;
 use App\Museum;
@@ -42,8 +44,8 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-    
-            Article::create($request->all());
+            $data = $request->all();
+            Article::create($data);
             return redirect()->route('article.index')->with('status', 'Article Added!');
     }
 

@@ -54,7 +54,7 @@
                         <form action="{{ route('artist.destroy',$artist->id) }}" method="post" class="d-inline">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" onclick="ConfirmDelete()">
                                 <i class="fa fa-trash-alt"></i>
                             </button>
                         </form>

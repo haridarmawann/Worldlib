@@ -59,7 +59,7 @@
                         <form action="{{ route('museum.destroy',$museum->id) }}" method="post" class="d-inline">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item')">
                                 <i class="fa fa-trash-alt"></i>
                             </button>
                         </form>
@@ -79,6 +79,7 @@
                  
              </tbody>
         </table>
+        {{ $museums->links() }}
       </div>
     </div>
       

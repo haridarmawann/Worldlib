@@ -38,6 +38,7 @@
                     <th>museum</th>
                     <th>artist</th>
                     <th>jenis</th>
+                    <th>article</th>
                     <th>foto</th>
                     <th>action</th>
                 </tr>
@@ -51,8 +52,22 @@
                     <td>{{ $item->date_created }}</td>
                     <td>{{ $item->museum->name }}</td>
                     <td>{{ $item->artist->name }}</td>
-                    <td>{{ $item->type->type }}</td>
+                    <td>@if (isset($item->type_id))
+                        {{ $item->type->type }}
+                        @else
+                        
+                        @endif
+                    </td>
+
+                    <td>@if (isset($item->article_id))
+                        {{ $item->article->name }}
+                        @else
+                        
+                        @endif
+                    </td>
                     
+
+            
                     <td>
                         <img src="{{ Storage::url($item->photo  )}}" style="width: 150px" class="iGallery" >
                     </td>
@@ -64,7 +79,7 @@
                         <form action="{{ route('item.destroy',$item->id) }}" method="post" class="d-inline">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item')">
                                 <i class="fa fa-trash-alt"></i>
                             </button>
                         </form>
@@ -84,6 +99,7 @@
                  
              </tbody>
         </table>
+        {{$items->links()}}
       </div>
     </div>
       

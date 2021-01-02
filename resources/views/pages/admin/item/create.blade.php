@@ -48,6 +48,7 @@
                     <div class="form-group">
                         <select name="type_id" required class="form-control">
                             <option value="">Pilih type</option>
+                            <option value="">none</option>
                             @foreach ($types as $type)
                                 <option value="{{ $type->id }}">
                                     {{ $type->type }}
@@ -59,6 +60,7 @@
                     <div class="form-group">
                         <select name="article_id" required class="form-control">
                             <option value="">Pilih Article</option>
+                            <option value="">none</option>
                             @foreach ($articles as $article)
                                 <option value="{{ $article->id }}">
                                     {{ $article->name }}

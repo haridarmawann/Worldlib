@@ -54,7 +54,7 @@
                         <form action="{{ route('country.destroy',$country->id) }}" method="post" class="d-inline">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item')">
                                 <i class="fa fa-trash-alt"></i>
                             </button>
                         </form>
@@ -70,10 +70,15 @@
                 </tr>
                 
             @endforelse
+
+            
            
                  
              </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+        {{ $countries->links() }}
+        </div>
       </div>
     </div>
       

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Museum;
 use App\Country;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class MuseumController extends Controller
      */
     public function index()
     {
-        $museums = Museum::with('country')->get();
+        $museums = Museum::with('country')->orderBy('country_id', 'asc')->paginate(4);
 
         return view('pages.admin.museum.index',[
             'museums' => $museums

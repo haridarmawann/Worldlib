@@ -10,8 +10,5 @@ class Type extends Model
         'type'
     ];
     protected $guarded = [];
-
-    public function item(){
-        return $this->hasMany(Type::class, 'type_id','id');
-    }
+    
 }

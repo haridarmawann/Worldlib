@@ -23,14 +23,15 @@
                     </div>
                     <div class="form-group">
                         <label for="lahir">Tanggal dibuat</label>
-                        <input type="date" class="form-control" name="date_created" id="Lahir"  placeholder="=Tanggal dibuat">
+                        <input type="date" class="form-control" name="date_created" id="Lahir"  
+                        placeholder="=Tanggal dibuat" value="{{ $item->date_created }}">
                       </div>
                     <div class="form-group">
                         <select name="artist_id" required class="form-control" value={{$item->artist_id}}>
                             <option value="">Pilih Artist</option>
                             <option value="">none</option>
                             @foreach ($artists as $artist)
-                                <option value="{{ $artist->id }}">
+                                <option value="{{ $artist->id }}" {{$item->artist_id  == $artist->id  ? 'selected' : ''}}>
                                     {{ $artist->name }}
                                 </option>
                             @endforeach
@@ -42,7 +43,7 @@
                             <option value="">Pilih museum</option>
                             <option value="">none</option>
                             @foreach ($museums as $museum)
-                                <option value="{{ $museum->id }}">
+                                <option value="{{ $museum->id }}" {{$item->museum_id  == $museum->id  ? 'selected' : ''}}>
                                     {{ $museum->name }}
                                 </option>
                             @endforeach
@@ -54,7 +55,7 @@
                             <option value="">Pilih type</option>
                             <option value="">none</option>
                             @foreach ($types as $type)
-                                <option value="{{ $type->id }}">
+                                <option value="{{ $type->id }}" {{$item->type_id  == $type->id  ? 'selected' : ''}}>
                                     {{ $type->type }}
                                 </option>
                             @endforeach
@@ -65,7 +66,7 @@
                             <option value="">Pilih Article</option>
                             <option value="">none</option>
                             @foreach ($articles as $article)
-                                <option value="{{ $article->id }}">
+                                <option value="{{ $article->id }}" {{$item->article_id  == $article->id  ? 'selected' : ''}}>
                                     {{ $article->name }}
                                 </option>
                             @endforeach

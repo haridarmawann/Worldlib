@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Country;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Symfony\Component\VarDumper\VarDumper;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +20,7 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries = Country::All();
+        $countries = Country::orderBy('country_name', 'asc')->paginate(5);
         return view('pages.admin.country.index',
                     ['countries' => $countries]);
         

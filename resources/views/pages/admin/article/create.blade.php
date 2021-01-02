@@ -13,11 +13,12 @@
                 <form action="{{ route('article.store') }}" method="post">  
                     @csrf  
                     <div class="form-group">
-                      <input type="name" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Enter Item">
-                      @error('name')<div class="invalid-feedback">{{$message}}</div> @enderror
+                      <input type="name" class="form-control" name="name" 
+                      placeholder="Enter name">
                     </div>
                     <div class="form-group">
-                      <textarea name="description" rows="10" class="d-block w-100 form-control" placeholder="Enter Description"></textarea>   
+                      <textarea name="description" rows="10" class="d-block w-100 form-control" 
+                      placeholder="Enter Description"></textarea>   
                     </div>
                    
                     <div class="form-group">

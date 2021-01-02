@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Article;
 use App\Item;
 use App\Artist;
@@ -18,7 +19,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = Item::with(['museum','artist','type','article'])->get();
+        $items = Item::with(['museum','artist','type','article'])->paginate(3);
         return view('pages.admin.item.index',[
             'items' => $items
         ]);
@@ -85,14 +86,7 @@ class ItemController extends Controller
         $artists = Artist::all();
         $types   = Type::all();
         $articles = Article::all();
-        return view('pages.admin.item.edit',[
-            'item'=>$item,
-            'museums' => $museums,
-            'artists' => $artists,
-            'types' => $types,
-            'articles' => $articles,
-            
-        ]);
+        return view('pages.admin.item.edit',compact('item','museums','artists','types','articles'));
     }
 
     /**

@@ -27,7 +27,7 @@
                       <select name="museum_id" required class="form-control">
                           <option value="">Pilih museum</option>
                           @foreach ($museums as $museum)
-                              <option value="{{ $museum->id }}">
+                              <option value="{{ $museum->id }}" {{$article->museum_id  == $museum->id  ? 'selected' : ''}}>
                                   {{ $museum->name }}
                               </option>
                           @endforeach

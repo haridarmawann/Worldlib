@@ -13,25 +13,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','PageController@index')
-       ->name('home');
 
-// Route::get('/country','CountryController@index');
-// Route::get('/country/create','CountryController@create');
-// Route::post('/country', 'CountryControlle@store');
-// route::get('/country/edit,'CountryControlle@edit')   
+Route::get('/','HomeController@index')
+      ->name('home');
+Route::get('/negara','HomeController@detail_country')
+      ->name('detail_c');
+Route::get('/museum','HomeController@detail_museum')
+      ->name('detail_m');
+Route::get('/item','HomeController@detail_item')
+      ->name('detail_i');
 
-Route::resource('country', 'CountryController');
-Route::resource('artist', 'ArtistController');
-Route::resource('museum', 'MuseumController');
-Route::resource('item', 'ItemController');
-
-Route::get('/type','TypeController@index')->name('type.index');
-Route::get('/type/create','TypeController@create')->name('type.create');
-Route::post('/type', 'TypeController@store')->name('type.store');
-route::get('/type/{type}/edit','TypeController@edit')->name('type.edit'); 
-route::patch('/type/{type}','TypeController@update')->name('type.update');
-route::delete('/type/{type}','TypeController@destroy')->name('type.destroy'); 
-
-Route::resource('article', 'ArticleController');
-
+Route::prefix('admin')
+    ->namespace('admin')
+    ->middleware('auth')
+    ->group(function () {
+       Route::get('/','PageController@index')->name('admin');
+       Route::resource('country', 'CountryController');
+       Route::resource('artist', 'ArtistController');
+       Route::resource('museum', 'MuseumController');
+       Route::resource('item', 'ItemController');
+       Route::resource('type','TypeController');
+       Route::resource('article', 'ArticleController');
+        
+    });
+    
+Auth::routes(['verify' => true]);

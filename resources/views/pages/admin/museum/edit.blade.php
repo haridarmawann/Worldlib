@@ -19,7 +19,7 @@
               <select name="country_id" required class="form-control">
                   <option value="">Pilih Negara</option>
                   @foreach ($countries as $country)
-                      <option value="{{ $country->id }}">
+                      <option value="{{ $country->id }}" {{$museum->country_id  == $country->id  ? 'selected' : ''}}>
                           {{ $country->country_name }}
                       </option>
                   @endforeach

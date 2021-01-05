@@ -12,7 +12,10 @@
       {{ $museum->name }}
     </h3>
     <p>
-      {{ $museum->city }}, {{ $museum->country->country_name }}
+      @if (isset($museum->city))
+      {{ $museum->city }},
+      @else
+      @endif {{ $museum->country->country_name }}
  </p>
   </div>
 

@@ -18,6 +18,9 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = Article::with('museum')->get();
+        // "SELECT * FROM articles, museums
+        // where articles.museum_id=museums.id
+        
         return view('pages.admin.article.index',[
             'articles' => $articles
         ]);
@@ -31,9 +34,12 @@ class ArticleController extends Controller
     public function create()
     {
         $museums = Museum::all();
+        // SELECT * FROM museums
         return view('pages.admin.article.create',[
             'museums' => $museums,
         ]);
+
+        
     }
 
     /**
@@ -46,6 +52,8 @@ class ArticleController extends Controller
     {
             $data = $request->all();
             Article::create($data);
+            // INSERT INTO Articles (name, description, museum_id)
+            // VALUES ('KOLEKSI WALTER SPIES', 'lorem-ipsum', '1');
             return redirect()->route('article.index')->with('status', 'Article Added!');
     }
 
@@ -69,7 +77,8 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         
-        $museums = Museum::where('id', $article->museum_id)->get();
+        $museums = Museum::select('id','name')->get();
+        // SELECT id,name FROM museums
         // $museums = Museum::all();
         return view('pages.admin.article.edit',[
             'article' => $article,
@@ -101,6 +110,7 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         Article::destroy($article->id);
+        // DELETE FROM articles WHERE id = '1';
         return redirect()->route('article.index')->with('delete','Article deleted');
     }
 }

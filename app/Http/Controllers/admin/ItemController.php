@@ -21,10 +21,20 @@ class ItemController extends Controller
      */
     public function index()
     {
+        // DB::enableQueryLog();
         $items = Item::with(['museum','artist','type','article','country'])->paginate(3);
+        // dd(\DB::getQueryLog());
         return view('pages.admin.item.index',[
             'items' => $items
         ]);
+        // "SELECT * FROM items, museums,artists,types,articles,countries 
+        //where items.museum_id=museums.id
+        //AND items.artist_id=artists.id 
+        //AND items.type_id=types.id 
+        //AND items.article_id=articles.id
+        //AND items.country_id=countries.id"
+        
+        
     }
 
     /**
@@ -90,12 +100,14 @@ class ItemController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Item $item)
+    // 
     {
         $museums = Museum::all();
         $artists = Artist::all();
         $types   = Type::all();
         $articles = Article::all();
         $countries = Country::all();
+        // dd(\DB::getQueryLog());
         return view('pages.admin.item.edit',compact('item','museums','artists','types','articles','countries'));
     }
 

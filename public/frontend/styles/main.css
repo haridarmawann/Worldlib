@@ -180,6 +180,7 @@ header p {
   color: white;
 }
 
+
 .section-content .btn-view-details {
   background: #FD6647;
   color: #ffffff;
@@ -217,6 +218,68 @@ header p {
   background-size: cover;
   margin-top: 50px;
   border-radius: 30px;
+}
+.section-content1 .card-country1 {
+  min-height: 439px;
+  padding: 15px;
+  background-size: cover;
+  margin-bottom: 60px;
+  border-radius: 15px;
+  margin-top: -200px;
+}
+
+.section-content1 .card-country2 {
+  min-height: 258px;
+  padding: 15px;
+  background-size: cover;
+  border-radius: 15px;
+  margin-top: 30px;
+  margin-right: -15px;
+}
+
+.section-content1 .card-country3 {
+  min-height: 439px;
+  padding: 15px;
+  background-size: cover;
+  margin-bottom: 60px;
+  border-radius: 15px;
+}
+
+.section-content1 .card-artikel {
+  min-height: 112px;
+  padding: 15px;
+  background-size: cover;
+  border-radius: 15px;
+  margin-right: -15px;
+  background-color: #0F0E20;
+  margin-bottom: 10px;
+}
+
+.section-content1 .country {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  margin-top: auto;
+}
+
+.section-content1 .artikel {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.section-content1 .item {
+  font-size: 10px;
+  font-weight: 400;
+  color: white;
+}
+
+
+.section-content1 .btn-view-details {
+  background: #FD6647;
+  color: #ffffff;
+  font-size: large;
+  font-weight: 700;
 }
 
 .section-item {

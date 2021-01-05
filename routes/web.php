@@ -26,8 +26,10 @@ Route::get('/country/museum/item/{id}','ItemController@index')
         ->name('item');
 Route::get('/country/museum/article/{id}','ArticleController@index')
         ->name('article');
-Route::get('/country/museum/type/{type}','TypeController@index')
+Route::get('/type/{type}','TypeController@index')
         ->name('type');
+Route::get('/artist/{name}','ArtistController@index')
+        ->name('artist');
 
 Route::prefix('admin')
     ->namespace('admin')

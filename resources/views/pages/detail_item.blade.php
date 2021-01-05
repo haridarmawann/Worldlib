@@ -21,7 +21,8 @@
                 <div class="description">
                       <h3>{{ $item->nama }}</h3>  
                       <br>
-                      <h4>{{ $item->artist->name}}, {{ $item->date_created }}</h4>
+                      <a href="{{ route('artist',$item->artist->name)}}">
+                      <h4>{{ $item->artist->name}},</a> {{ $item->date_created }}</h4>
                       <p>{{ $item->description }}</p>
                       @if (isset($item->type_id))
                       <a href="{{ route('type',$item->type->type)}}">

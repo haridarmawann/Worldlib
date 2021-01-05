@@ -37,7 +37,7 @@
           style="background-image: url('{{ Storage::url($item->photo)}}" >
         </div>
         <a href=" {{ route('item',$item->id)}} ">
-        <p class="text-center mt-1">{{ $item->nama }}, {{$item->museum->name }}, {{ $item->date_created }}, Dari koleksi: {{$item->museum->name }}</P>
+        <p class="text-center mt-1 mb-5">{{ $item->nama }}, {{$item->museum->name }}, {{ $item->date_created }}, Dari koleksi: {{$item->museum->name }}</P>
         <a>
           @endforeach 
           </div>

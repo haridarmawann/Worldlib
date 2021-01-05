@@ -20,7 +20,7 @@ class HomeController extends Controller
         // Select countries.country_nama, count(items.id)
         // FROM countries
         // JOIN items ON items.country_id = country.id
-        // GROUP BY items.country_id
+        // ORDER BY items.country_name
     }
 
     public function cari(Request $request)
@@ -28,7 +28,10 @@ class HomeController extends Controller
 		$cari = $request->cari;
 		$countries = Country::withCount('item')
 		->where('country_name','like',"%".$cari."%")
-		->paginate();
+        ->paginate();
+        // (select count(*) from `items` where `countries`.`id` = `items`.`country_id`) as `item_count`  
+        // from `countries` where `country_name` like $_GET['cari']
+        
 		return view('pages.home',compact('countries'));
  
     }

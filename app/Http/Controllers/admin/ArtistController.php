@@ -40,8 +40,7 @@ class ArtistController extends Controller
     {
         
         $request->validate([
-            'name' => 'required|max:50',
-            'description' => 'required'  
+            'name' => 'required|max:50'  
             ]);
 
         $data = $request->all();

@@ -48,7 +48,6 @@ class MuseumController extends Controller
             'country_id' =>'required|integer|exists:countries,id',
             'name'=>'required|max:100',
             'description'=>'required',
-            'city'=>'required|max:100',
             'logo'=>'required|image'
             ]);
         

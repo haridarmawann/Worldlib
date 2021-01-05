@@ -14,6 +14,18 @@
       <br>
       apa yang kamu cari 
   </p>
+  
+  <form action="{{ route('country-search')}}" method="GET">
+    <div class="d-flex justify-content-center">
+      <div class="form-group">
+          <div class="col-lg-12 mb-2">
+            <input type="text" class="form-control" name="cari" id="search" placeholder="Search"> 
+          </div>
+          <input type="submit" class ="btn btn-outline-light" value="Search">
+      <div>
+    </div>
+  </form>
+  
 </header>
 <!-- main -->
 <Main>
@@ -23,104 +35,20 @@
     <div class="container">
       <div class="row section-place justify-content-lg-center">
         <!-- amerika  --> 
+        @foreach ($countries as $country)
+            
+       
             <div class="col-sm-6 col-md-4 col-lg-3">
-              <a href="{{ route('detail_c')}}">
+              <a href=" {{ route('country',$country->id)}}">
               <div class="card-country text-center d-flex flex-column " 
-              style="background-image: url('frontend/images/Group 7.png');">
-                  <div class="country mr-auto">Amerika Serikat</div>
-                  <div class="item mr-auto">1.300.000.00 item</div>
-                  <!-- <div class="country-button mt-auto">
-                    <a href="" class="btn btn-view-details px-4">
-                      View Details
-                  </a>
-                  </div>                     -->
+              style="background-image: url('{{ Storage::url($country->country_image )}}')">
+                  <div class="country mr-auto">{{ $country ->country_name }}</div>
+                  <div class="item mr-auto">{{ $country ->item_count}} item</div>
               </div>
             </a>
             </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-country text-center d-flex flex-column" 
-            style="background-image: url('frontend/images/Group\ 8.png');">
-                <div class="country mr-auto">Amerika Serikat</div>
-                <div class="item mr-auto">1.300.000.00 item</div>
-                <!-- <div class="country-button mt-auto">
-                  <a href="" class="btn btn-view-details px-4">
-                    View Details
-                </a>
-                </div>                     -->
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-country text-center d-flex flex-column" 
-            style="background-image: url('frontend/images/Group 6.png');">
-                <div class="country mr-auto">Amerika Serikat</div>
-                <div class="item mr-auto">1.300.000.00 item</div>
-                <!-- <div class="country-button mt-auto">
-                  <a href="" class="btn btn-view-details px-4">
-                    View Details
-                </a>
-                </div>                     -->
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-country text-center d-flex flex-column" 
-            style="background-image: url('frontend/images/Group\ 9.png');">
-                <div class="country mr-auto">Amerika Serikat</div>
-                <div class="item mr-auto">1.300.000.00 item</div>
-                <!-- <div class="country-button mt-auto">
-                  <a href="" class="btn btn-view-details px-4">
-                    View Details
-                </a>
-                </div>                     -->
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-country text-center d-flex flex-column" 
-            style="background-image: url('frontend/images/amerika.jpg');">
-                <div class="country mr-auto">Amerika Serikat</div>
-                <div class="item mr-auto">1.300.000.00 item</div>
-                <!-- <div class="country-button mt-auto">
-                  <a href="" class="btn btn-view-details px-4">
-                    View Details
-                </a>
-                </div>                     -->
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-country text-center d-flex flex-column" 
-            style="background-image: url('frontend/images/amerika.jpg');">
-                <div class="country mr-auto">Amerika Serikat</div>
-                <div class="item mr-auto">1.300.000.00 item</div>
-                <!-- <div class="country-button mt-auto">
-                  <a href="" class="btn btn-view-details px-4">
-                    View Details
-                </a>
-                </div>                     -->
-            </div>
-          </div>  
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-country text-center d-flex flex-column" 
-            style="background-image: url('frontend/images/amerika.jpg');">
-                <div class="country mr-auto">Amerika Serikat</div>
-                <div class="item mr-auto">1.300.000.00 item</div>
-                <!-- <div class="country-button mt-auto">
-                  <a href="" class="btn btn-view-details px-4">
-                    View Details
-                </a>
-                </div>                     -->
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="card-country text-center d-flex flex-column" 
-            style="background-image: url('frontend/images/amerika.jpg');">
-                <div class="country mr-auto">Amerika Serikat</div>
-                <div class="item mr-auto">1.300.000.00 item</div>
-                <!-- <div class="country-button mt-auto">
-                  <a href="" class="btn btn-view-details px-4">
-                    View Details
-                </a>
-                </div>                     -->
-            </div>
-          </div>
+          @endforeach
+          
 
           
 
@@ -131,3 +59,19 @@
   </section>
 </Main> 
 @endsection
+
+{{-- <script>
+  $(document).ready(function(){
+      function fetch_customer_data(query = '')
+      $.ajax({
+        url:"{{ route(live_search.action) }}",
+        method:'GET',
+        data:{query:query},
+        dataType:'jsons'
+        success:function(data)
+        {
+          $('tbody').html(data.table_data)
+        }
+      })
+  })
+</script> --}}

@@ -1,6 +1,8 @@
 <!-- Bootstrap core JavaScript-->
 <script src="{{ url('backend/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ url('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!-- Core plugin JavaScript-->
 <script src="{{ url('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>

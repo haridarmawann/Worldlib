@@ -35,19 +35,31 @@
                     </div>
 
                     <div class="form-group">
-                        <select name="museum_id" required class="form-control">
-                            <option value="">Pilih museum</option>
-                            @foreach ($museums as $museum)
-                                <option value="{{ $museum->id }}">
-                                    {{ $museum->name }}
+                        <select name="country_id" required class="form-control" id="country">
+                            <option value="" disabled selected>== Pilih negara ==</option>
+                            @foreach ($countries as $id => $country_name)
+                                <option value="{{ $id }}">
+                                    {{ $country_name }}
                                 </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    
+
+                    <div class="form-group">
+                        <select name="museum_id" required class="form-control" id="city">
+                            <option value="" disabled selected>== Pilih museum ==</option>
+                            @foreach ($museums as $museum)
+                            <option value="{{ $museum->id }}">
+                                {{ $museum->name }}
+                            </option>
                             @endforeach
                         </select>
                     </div>
 
                     <div class="form-group">
                         <select name="type_id" required class="form-control">
-                            <option value="">Pilih type</option>
+                            <option value="">== Pilih type ==</option>
                             <option value="">none</option>
                             @foreach ($types as $type)
                                 <option value="{{ $type->id }}">
@@ -59,7 +71,7 @@
 
                     <div class="form-group">
                         <select name="article_id" required class="form-control">
-                            <option value="">Pilih Article</option>
+                            <option value="">== Pilih Article ==</option>
                             <option value="">none</option>
                             @foreach ($articles as $article)
                                 <option value="{{ $article->id }}">
@@ -68,6 +80,8 @@
                             @endforeach
                         </select>
                     </div>
+
+                    
             
 
                     <div class="form-group">
@@ -86,4 +100,27 @@
 
 </div>
 
+
 @endsection
+
+
+{{-- @push('addon-script')
+<script>
+$(function () {
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+    });
+    $('#country').on('change', function () {
+        axios.post('{{ route('subCat.store') }}', {id: $(this).val()})
+            .then(function (response) {
+                $('#museum').empty();
+                $.each(response.data, function (id, name) {
+                    $('#museum').append(new Option(name, id))
+                })
+            });
+    });
+});
+</script>
+@endpush --}}

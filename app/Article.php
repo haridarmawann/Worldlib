@@ -17,6 +17,10 @@ class Article extends Model
         return $this->belongsTo(Museum::class, 'museum_id','id');
     }
 
+    public function item(){
+        return $this->hasMany(Item::class, 'article_id','id');
+    }
+
     
 
 }

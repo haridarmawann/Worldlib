@@ -51,7 +51,13 @@
                     <td>{{ $item->description}}</td>
                     <td>{{ $item->date_created }}</td>
                     <td>{{ $item->museum->name }}</td>
-                    <td>{{ $item->artist->name }}</td>
+
+                    <td>@if (isset($item->artist_id))
+                        {{ $item->artist->name }}
+                        @else
+                    
+                        @endif
+                    </td>
                     <td>@if (isset($item->type_id))
                         {{ $item->type->type }}
                         @else

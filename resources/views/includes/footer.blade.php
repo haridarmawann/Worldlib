@@ -12,7 +12,7 @@
     </div>
   </div>
     <div class="mt-5">
-      <div class="row border-top justify-content-center align-items-center pt-4">
+      <div class="row justify-content-center align-items-center pt-4">
           <div class="col-auto text-gray-500 font-weight-light">
               2021 Copyright Worldlib - All right reserved - Made in medan
               

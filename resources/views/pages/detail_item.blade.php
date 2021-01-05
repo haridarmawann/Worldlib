@@ -4,6 +4,8 @@
 @endsection
 
 @section('content')
+<header class="text-center">
+</header>
 
 <section class="section-detail-item">
   <div class="container">
@@ -12,23 +14,22 @@
           <div class="card card-detail-item">
             <div class="features row">
               <div class="col-lg-5">
-                <img src="frontend/images/amerika.jpg"
+                <img src="{{ Storage::url($item->photo)}}"
                      class="features-image"/>
               </div>
               <div class="col-lg-7">
                 <div class="description">
-                      <h3>OPEN THE DOOR</h3>
-                      <h4>Henri Rousseau, 01-01-1921</h4>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Nullam sed euismod metus. Quisque accumsan sapien dignissim dictum ultricies. 
-                        Phasellus viverra leo purus, nec imperdiet mi fermentum at. Phasellus et tristique nibh, 
-                        vitae molestie nunc. Aenean tempor, orci a porta egestas, enim dui tempus nisi, 
-                        eget tempor est quam et erat. Aenean tincidunt ut lorem at tristique. In erat eros, 
-                        porttitor eu turpis vitae, dictum sodales sem. Etiam porta vehicula porta. Quisque feugiat 
-                        a magna in congue. Nullam placerat nisi et odio aliquet tempor. Maecenas tellus quam, 
-                        luctus et eros at, vestibulum euismod metus. Aliquam cursus nisi in mattis ultrices. 
-                        Mauris ullamcorper mattis pellentesque. Suspendisse ut blandit sem.</p>
-                        <h2>Painting</h2>
+                      <h3>{{ $item->nama }}</h3>  
+                      <br>
+                      <h4>{{ $item->artist->name}}, {{ $item->date_created }}</h4>
+                      <p>{{ $item->description }}</p>
+                      @if (isset($item->type_id))
+                      <a href="{{ route('type',$item->type->type)}}">
+                      <h2>{{ $item->type->type  }}</h2>
+                      </a>
+                      @else
+                        
+                      @endif
                 </div>
               </div>
           </div>

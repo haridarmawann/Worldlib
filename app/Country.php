@@ -18,6 +18,9 @@ class Country extends Model
     public function museum(){
         return $this->hasMany(Museum::class,'country_id','id');
     }
+    public function item(){
+        return $this->hasMany(Item::class,'country_id','id');
+    }
 
     public function article(){
         return $this->hasMany(Article::class, 'museum_id','id');

@@ -8,7 +8,9 @@ use App\Item;
 use App\Artist;
 use App\Museum;
 use App\Type;
+use App\Country;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ItemController extends Controller
 {
@@ -19,7 +21,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = Item::with(['museum','artist','type','article'])->paginate(3);
+        $items = Item::with(['museum','artist','type','article','country'])->paginate(3);
         return view('pages.admin.item.index',[
             'items' => $items
         ]);
@@ -36,14 +38,22 @@ class ItemController extends Controller
         $artists = Artist::all();
         $types   = Type::all();
         $articles = Article::all();
+        $countries = Country::pluck('country_name', 'id');
         return view('pages.admin.item.create',[
             'museums' => $museums,
             'artists' => $artists,
             'types'   => $types,
-            'articles' => $articles
+            'articles' => $articles,
+            'countries' => $countries
         ]);
     }
+    // public function subCat(Request $request)
+    // {
+    //     $cities = Museum::where('country_id', $request->get('id'))
+    //         ->pluck('name', 'id');
 
+    //     return response()->json($cities);
+    // }
     /**
      * Store a newly created resource in storage.
      *
@@ -52,12 +62,11 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+        
               
             $data = $request->all();
             $data['photo'] = $request->file('photo')->store(
-                'assets/gallery', 'public'
-            );
-
+                'assets/gallery', 'public');
             Item::create($data);
     
             return redirect()->route('item.index')->with('status', 'Museum Added!');
@@ -86,7 +95,8 @@ class ItemController extends Controller
         $artists = Artist::all();
         $types   = Type::all();
         $articles = Article::all();
-        return view('pages.admin.item.edit',compact('item','museums','artists','types','articles'));
+        $countries = Country::all();
+        return view('pages.admin.item.edit',compact('item','museums','artists','types','articles','countries'));
     }
 
     /**

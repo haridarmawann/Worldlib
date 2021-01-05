@@ -8,7 +8,7 @@ class Item extends Model
 {
     protected $fillable = [
         'nama','description','date_created',
-        'photo','museum_id','artist_id','type_id','article_id'
+        'photo','museum_id','artist_id','type_id','article_id','country_id'
     ];
 
     protected $guarded = [];
@@ -17,6 +17,10 @@ class Item extends Model
 
     public function museum(){
         return $this->belongsTo(Museum::class, 'museum_id','id');
+    }
+
+    public function country(){
+        return $this->belongsTo(Country::class, 'country_id','id');
     }
 
     public function artist()
@@ -28,6 +32,7 @@ class Item extends Model
     {
         return $this->belongsTo(Type::class, 'type_id','id');
     }
+        
 
     public function article(){
         return $this->belongsTo(Article::class, 'article_id','id');

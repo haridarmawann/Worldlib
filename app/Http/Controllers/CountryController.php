@@ -17,6 +17,7 @@ class CountryController extends Controller
                             ->where('id',$request->id)
                             ->firstOrFail();
         // dd(\DB::getQueryLog());
+        
         // select `countries`.*, 
         // (select count(*) from `museums` where `countries`.`id` = `museums`.`country_id`) as `museum_count`, 
         // (select count(*) from `items` where `countries`.`id` = `items`.`country_id`) as `item_count` 

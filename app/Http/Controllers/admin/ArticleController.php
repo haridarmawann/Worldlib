@@ -98,6 +98,9 @@ class ArticleController extends Controller
         $data = $request->all();
            
         $article->update($data);
+        // UPDATE articles
+        // SET nama = nama, deskripsi = deskripsi
+        // WHERE ID = 1;
         return redirect()->route('article.index')->with('status', 'Article Update!');
     }
 

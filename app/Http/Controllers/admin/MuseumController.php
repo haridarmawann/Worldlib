@@ -100,6 +100,7 @@ class MuseumController extends Controller
         $data['logo'] = $request->file('logo')->store(
             'assets/gallery', 'public'
         );    
+        
         $museum->update($data);
         return redirect()->route('museum.index')->with('status', 'Museum Update!');
     }

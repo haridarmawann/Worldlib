@@ -78,17 +78,16 @@ class ArtistController extends Controller
      * @param  \App\Artist  $artist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Artist $artist)
+    public function update(Request $request, $id)
     {    
         $request->validate([
-            'name' => 'required|max:50',
-            'description' => 'required',
-            'birth_time'=>'required'  
+            'name' => 'required|max:50'  
             ]);
-
+        
         $data=$request->all();
-        Artist::where('id',$request->id)
-                ->update($data);
+
+        $artist= Artist::findOrFail($id);
+        $artist->update($data);
         return redirect()->route('artist.index')->with('status','Artist updated');
         
     }

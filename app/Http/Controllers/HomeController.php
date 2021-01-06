@@ -29,6 +29,7 @@ class HomeController extends Controller
 		$countries = Country::withCount('item')
 		->where('country_name','like',"%".$cari."%")
         ->paginate();
+        // select `countries`.*,
         // (select count(*) from `items` where `countries`.`id` = `items`.`country_id`) as `item_count`  
         // from `countries` where `country_name` like $_GET['cari']
         

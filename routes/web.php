@@ -36,8 +36,6 @@ Route::prefix('admin')
     ->middleware('auth')
     ->group(function () {
        Route::get('/','PageController@index')->name('admin');
-       Route::post('subcat', 'ItemController@subCat')
-              ->name('subCat.store');
        Route::resource('country', 'CountryController');
        Route::resource('artist', 'ArtistController');
        Route::resource('museum', 'MuseumController');

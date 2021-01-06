@@ -27,12 +27,12 @@ class ItemController extends Controller
         return view('pages.admin.item.index',[
             'items' => $items
         ]);
-        // "SELECT * FROM items, museums,artists,types,articles,countries 
-        //where items.museum_id=museums.id
-        //AND items.artist_id=artists.id 
-        //AND items.type_id=types.id 
-        //AND items.article_id=articles.id
-        //AND items.country_id=countries.id"
+        // SELECT * FROM items, museums,artists,types,articles,countries 
+        // where items.museum_id=museums.id
+        // AND items.artist_id=artists.id 
+        // AND items.type_id=types.id 
+        // AND items.article_id=articles.id
+        // AND items.country_id=countries.id
         
         
     }
@@ -79,7 +79,7 @@ class ItemController extends Controller
                 'assets/gallery', 'public');
             Item::create($data);
     
-            return redirect()->route('item.index')->with('status', 'Museum Added!');
+            return redirect()->route('item.index')->with('status', 'Item Added!');
     }
 
     /**
@@ -125,6 +125,7 @@ class ItemController extends Controller
                 'assets/gallery', 'public'
             );   
             $item->update($data);
+           
             return redirect()->route('item.index')->with('status', 'Item Update!');
     }
 

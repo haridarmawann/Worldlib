@@ -6,7 +6,7 @@
 
   <!-- Page Heading -->
   <div class="d-sm-flex align-items-center justify-content-between mb-4">
-      <h1 class="h3 mb-0 text-gray-800">Country</h1>
+      <h1 class="h3 mb-0 text-gray-800">Artist</h1>
       <a href="{{ route('artist.create') }}" class="btn btn-primary">
         <i class="fas fa-plus text-white"> Add Artist</i>
        </a>
